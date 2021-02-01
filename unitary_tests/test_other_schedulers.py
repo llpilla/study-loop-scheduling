@@ -40,7 +40,7 @@ class OpenMPDynamicTest(unittest.TestCase):
         mapping = result[0]
 
         self.assertEqual(result[1], 18)
-        self.assertEqual(result[2], 3)
+        self.assertEqual(result[2], 5)
         self.assertEqual(result[3], 4)
 
         self.assertEqual(mapping[0], 0)

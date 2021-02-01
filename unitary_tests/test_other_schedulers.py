@@ -81,7 +81,7 @@ class OpenMPGuidedTest(unittest.TestCase):
         self.assertEqual(mapping[9], 1)
 
     def test_chunk2(self):
-        guided = OpenMPGuided(self.tasks, self.num_resources, 1)
+        guided = OpenMPGuided(self.tasks, self.num_resources, 2)
         result = simulate(self.tasks, self.num_resources, guided)
         mapping = result[0]
 

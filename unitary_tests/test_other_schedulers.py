@@ -111,7 +111,7 @@ class RBTest(unittest.TestCase):
         result = simulate(self.tasks, self.num_resources, rb)
         mapping = result[0]
 
-        self.assertEqual(result[1], 23)
+        self.assertEqual(result[1], 28)
         self.assertEqual(result[2], 1)
         self.assertEqual(result[3], 2)
 
@@ -120,7 +120,7 @@ class RBTest(unittest.TestCase):
         self.assertEqual(mapping[2], 0)
         self.assertEqual(mapping[3], 0)
         self.assertEqual(mapping[4], 0)
-        self.assertEqual(mapping[5], 1)
+        self.assertEqual(mapping[5], 0)
         self.assertEqual(mapping[6], 1)
         self.assertEqual(mapping[7], 1)
         self.assertEqual(mapping[8], 1)
@@ -133,7 +133,7 @@ class RBTest(unittest.TestCase):
         result = simulate(self.tasks, self.num_resources, rb)
         mapping = result[0]
 
-        self.assertEqual(result[1], 13)
+        self.assertEqual(result[1], 18)
         self.assertEqual(result[2], 3)
         self.assertEqual(result[3], 4)
 
@@ -142,9 +142,9 @@ class RBTest(unittest.TestCase):
         self.assertEqual(mapping[2], 0)
         self.assertEqual(mapping[3], 1)
         self.assertEqual(mapping[4], 1)
-        self.assertEqual(mapping[5], 2)
+        self.assertEqual(mapping[5], 1)
         self.assertEqual(mapping[6], 2)
-        self.assertEqual(mapping[7], 3)
+        self.assertEqual(mapping[7], 2)
         self.assertEqual(mapping[8], 3)
         self.assertEqual(mapping[9], 3)
 

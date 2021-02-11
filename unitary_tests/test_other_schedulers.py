@@ -112,8 +112,8 @@ class RBTest(unittest.TestCase):
         mapping = result[0]
 
         self.assertEqual(result[1], 28)
-        self.assertEqual(result[2], 1)
-        self.assertEqual(result[3], 2)
+        self.assertEqual(result[2], 2)
+        self.assertEqual(result[3], 1)
 
         self.assertEqual(mapping[0], 0)
         self.assertEqual(mapping[1], 0)
@@ -134,8 +134,8 @@ class RBTest(unittest.TestCase):
         mapping = result[0]
 
         self.assertEqual(result[1], 18)
-        self.assertEqual(result[2], 3)
-        self.assertEqual(result[3], 4)
+        self.assertEqual(result[2], 4)
+        self.assertEqual(result[3], 3)
 
         self.assertEqual(mapping[0], 0)
         self.assertEqual(mapping[1], 0)

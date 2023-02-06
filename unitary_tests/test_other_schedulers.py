@@ -6,7 +6,7 @@ import sys
 # code from our simulator
 sys.path.append('../')
 
-from simulator.schedulers import OpenMPDynamic, OpenMPGuided, RecursiveBipartition
+from simulator.schedulers import OpenMPDynamic, OpenMPGuided, RecursiveBipartition, Nicol
 from simulator.simulator import simulate
 
 class OpenMPDynamicTest(unittest.TestCase):
@@ -147,6 +147,32 @@ class RBTest(unittest.TestCase):
         self.assertEqual(mapping[7], 2)
         self.assertEqual(mapping[8], 3)
         self.assertEqual(mapping[9], 3)
+
+
+class NicolTest(unittest.TestCase):
+    def setUp(self):
+        self.tasks = [2, 4, 6, 8, 5, 3, 9, 1, 11, 7]
+
+    def test_three(self):
+        self.num_resources = 3
+        nicol = Nicol(self.tasks, self.num_resources)
+        result = simulate(self.tasks, self.num_resources, nicol)
+        mapping = result[0]
+
+        self.assertEqual(result[1], 20)
+        self.assertEqual(result[2], 3)
+        self.assertEqual(result[3], 2)
+
+        self.assertEqual(mapping[0], 0)
+        self.assertEqual(mapping[1], 0)
+        self.assertEqual(mapping[2], 0)
+        self.assertEqual(mapping[3], 0)
+        self.assertEqual(mapping[4], 1)
+        self.assertEqual(mapping[5], 1)
+        self.assertEqual(mapping[6], 1)
+        self.assertEqual(mapping[7], 1)
+        self.assertEqual(mapping[8], 2)
+        self.assertEqual(mapping[9], 2)
 
 
 if __name__ == '__main__':

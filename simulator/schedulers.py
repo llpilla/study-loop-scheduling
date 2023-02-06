@@ -257,3 +257,40 @@ class RecursiveBipartition(Scheduler):
             # empties the list
             self.schedule[resource_id] = []
         return tasks
+
+
+class Nicol(Scheduler):
+    """
+    Scheduler based on Nicol's algorithm using a parametric search and
+    greedy probes. Returns a solution with a minimal makespan with maximal
+    locality.
+
+    Notes
+    -----
+    The algorithm is discussed in details in Pınar, Ali, and Cevdet Aykanat.
+    "Fast optimal load balancing algorithms for 1D partitioning."
+    Journal of Parallel and Distributed Computing 64, no. 8 (2004): 974-996.
+    """
+    def __init__(self, tasks, num_resources):
+        Scheduler.__init__(self, num_resources, name='Nicol')
+        # TODO
+
+    def query(self, resource_id):
+        """
+        Provides a list of tasks to a resource once.
+
+        Parameters
+        ----------
+        resource_id : int
+            Identifier of the resource
+
+        Returns
+        -------
+        list of int
+            Pre-computed list of task identifiers, or an empty list
+        """
+        tasks = self.schedule[resource_id]
+        if tasks:  # if they have not been scheduled before
+            # empties the list
+            self.schedule[resource_id] = []
+        return tasks

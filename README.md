@@ -55,3 +55,4 @@ Check how they differ in terms of makespan, number of calls to the scheduler, an
 
 7. Extend the recursive bipartition algorithm to work with arbitrary numbers of resources, and compare its results to the ones of the other schedulers.
 
+8. Write Nicol's algorithm and compare it to the previous algorithms.
